@@ -1,0 +1,27 @@
+Sorting Algorithm: Bubble Sort
+Input Size	CPU Time (seconds)
+10		0.000000
+100		0.000000
+1000		0.001000
+10000		0.140000
+100000		18.308000
+1		0.000000
+
+Sorting Algorithm: Selection Sort
+Input Size	CPU Time (seconds)
+10		0.000000
+100		0.000000
+1000		0.001000
+10000		0.074000
+100000		5.277000
+2		0.000000
+
+Sorting Algorithm: Insertion Sort
+Input Size	CPU Time (seconds)
+10		0.000000
+100		0.000000
+1000		0.002000
+10000		0.057000
+100000		3.851000
+3		0.000000
+
