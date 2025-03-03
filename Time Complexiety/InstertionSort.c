@@ -2,19 +2,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-void bubbleSort(int *arr, int n) {
-    int i, j, temp;
-    for (i = 0; i < n - 1; i++) {
-        for (j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+void insertionSort(int *arr, int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
     }
 }
-
 
 int main() {
     int n, c;
@@ -28,7 +26,7 @@ int main() {
         printf("Error opening file!\n");
         return -1;
     }
-        fprintf(file, "Bubble Sort\n");
+        fprintf(file, "Selection Sort\n");
 
         fprintf(file, "Input Size\tCPU Time (seconds)\n");
 
@@ -47,7 +45,7 @@ int main() {
             }
 
             start_time = clock();
-            bubbleSort(arr, n);
+            insertionSort(arr, n);
             end_time = clock();
 
             double cpu_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
@@ -59,5 +57,3 @@ int main() {
         fclose(file);
         return 0;
     }
-
-

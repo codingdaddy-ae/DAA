@@ -1,10 +1,18 @@
 #include <stdio.h>
 #include <time.h>
+
 void swap (int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 int partition(int arr[],int p, int r)
 {
     int x = arr[p];
     
+
 }
 
 void sort(int arr[], int n)
