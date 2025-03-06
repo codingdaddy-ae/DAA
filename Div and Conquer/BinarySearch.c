@@ -14,7 +14,7 @@ void sort(int arr[], int n)
     }
 }
 
-int binary(int arr[], int left, int right, int target
+int binary(int arr[], int left, int right, int target)
 {
         if (left <= right)
     {
