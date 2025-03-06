@@ -39,7 +39,7 @@ int main() {
                 return -1;
             }
 
-            // Initialize array with random numbers
+            // Initialize array with random numbe
             for (int j = 0; j < n; j++) {
                 arr[j] = rand();
             }
