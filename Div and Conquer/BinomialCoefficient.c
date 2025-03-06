@@ -15,6 +15,5 @@ int main()
     printf("Enter the two numbers: ");
     scanf("%d %d", &a, &b);
     printf("The binomial co-efficient of the two numbers is: %d", binomial(a,b));
-    return 0;
 
 }
