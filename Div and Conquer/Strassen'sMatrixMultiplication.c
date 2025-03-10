@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//
 // Function to add two matrices
 void add(int n, int A[n][n], int B[n][n], int result[n][n]) {
     for (int i = 0; i < n; i++) {
