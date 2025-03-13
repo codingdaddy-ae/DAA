@@ -1,4 +1,4 @@
-// A 
+// A denotes "from-rod" 
 #include <stdio.h>
 #include <time.h>
 
