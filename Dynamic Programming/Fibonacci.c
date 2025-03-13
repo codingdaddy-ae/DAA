@@ -1,4 +1,4 @@
-//           Fibonacci Using Dynamic Programming.
+//           Fibonacci using Dynamic Programming.
 #include <stdio.h>
 #include <time.h>
 
