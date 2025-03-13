@@ -1,4 +1,4 @@
-// A denotes "from-rod", B denotes "to_rod".
+// A denotes "from-rod", B denotes "to_rod" and C denotes 
 #include <stdio.h>
 #include <time.h>
 
