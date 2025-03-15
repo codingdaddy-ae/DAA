@@ -62,7 +62,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
-
     total_t = (double)(end - start) / CLOCKS_PER_SEC;
     printf("\nTime required: %f seconds\n", total_t);
 
