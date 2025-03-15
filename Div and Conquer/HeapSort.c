@@ -10,7 +10,7 @@ void swap(int *a, int *b) {
 void heapify(int arr[], int n, int i) {
     int largest = i;       // Initialize largest as root
     int left = 2 * i + 1; // Left child
-    int right = 2 * i + 2;// Right child
+    int right = 2 * i + 2;
 
     // If left child is larger than root
     if (left < n && arr[left] > arr[largest])
