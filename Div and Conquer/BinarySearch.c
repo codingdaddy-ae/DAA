@@ -3,9 +3,12 @@
 
 void sort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - 1 - i; j++) {
-            if (arr[j] > arr[j + 1]) {
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
@@ -16,7 +19,7 @@ void sort(int arr[], int n)
 
 int binary(int arr[], int left, int right, int target)
 {
-        if (left <= right)
+    if (left <= right)
     {
         int mid = left + (right - left) / 2; // Find middle index
         if (target == arr[mid])
@@ -33,14 +36,14 @@ int main()
 {
     int n, k;
     int flag;
-   
+
     printf("Enter the size of the array: ");
     scanf("%d", &n);
-   
+
     clock_t start, end;
     double total_t;
     int arr[n]; // Dynamic array
-   
+
     printf("Enter the array elements: \n");
     for (int i = 0; i < n; i++)
     {
@@ -49,7 +52,7 @@ int main()
 
     printf("Enter the element to be searched: \n");
     scanf("%d", &k);
-   
+
     start = clock();
     sort(arr, n);
     flag = binary(arr, 0, n - 1, k);
@@ -58,9 +61,9 @@ int main()
     else
         printf("Not found\n");
     end = clock();
-   
+
     total_t = (double)(end - start) / CLOCKS_PER_SEC;
     printf("Time required = %f seconds\n", total_t);
-   
+
     return 0;
 }
