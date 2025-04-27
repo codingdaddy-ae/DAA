@@ -1,0 +1,29 @@
+//DIJKSTRA'S ALGORITHM
+nodes = 6 then graph:
+0 4 0 0 0 0
+4 0 8 0 0 0 
+0 8 0 7 0 4 
+0 0 7 0 9 14
+0 0 0 9 0 10
+0 0 4 14 10 0
+
+//BELLMAN-FORD 
+Enter number of nodes: 5
+Enter adjacency matrix (0 for no edge):
+0  6  7  0  0  
+6  0  8  5 -4  
+7  8  0  9  0  
+0  5  9  0  2  
+0 -4  0  2  0  
+
+Enter source node: 0
+
+//For negative weight cycles
+Enter number of nodes: 4
+Enter adjacency matrix (0 for no edge):
+0 1 0 0
+0 0 -2 0
+0 0 0 -1
+0 2 0 0
+
+Enter source node: 0
