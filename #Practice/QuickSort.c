@@ -11,23 +11,25 @@ void swap (int *a, int *b)
 int partition(int arr[],int p, int r)
 {
     int x = arr[p];
-    
-
-}
-
-void sort(int arr[], int n)
-{
-    for (int i = 0; i < n; i++)
+    int  i = p;
+    for (int j = p; j <= r; j++)
     {
-        int min = i;
-        for (int j = i+1; j < n; j++)
+        if (arr[j] < x)
         {
-            if (arr[j]< arr[min])
-            min = j;
+            i++;
+            swap(&arr[i], &arr[j]);
         }
-        int temp = arr[i];
-        arr[i] = arr[min];
-        arr[min] = temp;
+    }
+    swap(&arr[i], &arr[p]);
+    return i;
+}
+void QuickSort(int arr[] , int p, int r)
+{
+    if (p < r)
+    {
+        int q =  partition(arr, p, r);
+        QuickSort(arr, p, q);
+        QuickSort(arr, q+1, r);
     }
 }
 
@@ -42,24 +44,22 @@ int main()
         {
             scanf("%d", &arr[i]);
         }
-    printf("Enter the element to be searched: ");
-    scanf("%d", &k);
-    
+
     clock_t start, end;
     double total_t;
+    
+    start = clock();
+    QuickSort(arr, 0, n-1);
+    end = clock();
 
-    sort(arr,n);
     printf("Sorted array: ");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
     }
 
-    start = clock();
-    binary(arr, 0, n, k);
-    end = clock();
 
     total_t = (double)(end - start)/CLOCKS_PER_SEC;
-    printf("Time required: %.10f\n", total_t);
+    printf("\nTime required: %.10f\n", total_t);
     return 0;
 }
