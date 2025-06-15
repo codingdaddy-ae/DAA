@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <limits.h>
+#include <stdbool.h> // Include for bool
 
-// #define  100
 int V;
-int min_distance(int dist[V], int visited[V])
+int min_distance(int dist[V], bool visited[V])
 {
-    int min = INT_MAX, min_index;
+    int min = INT_MAX, min_index = -1;
     for (int v = 0; v < V; v++)
         if (!visited[v] && dist[v] <= min)
             min = dist[v], min_index = v;
@@ -14,7 +14,7 @@ int min_distance(int dist[V], int visited[V])
 
 void printSolution(int dist[V])
 {
-    printf("Vertex \t disttance from Souce \n");
+    printf("Vertex \t distance from Source\n");
     for (int i = 0; i < V; i++)
     {
         printf("%d \t %d\n", i, dist[i]);
@@ -24,18 +24,20 @@ void printSolution(int dist[V])
 void dijkstra(int graph[V][V], int src)
 {
     int dist[V]; // Shortest distance from src to i
-    int visited[V]; //Stores visited nodes
+    bool visited[V]; //Stores visited nodes
 
     for (int i = 0; i < V; i++)
     {
         dist[i] = INT_MAX;
-        visited[i] = 0;
+        visited[i] = false; // Use false
     }
     dist[src] = 0;
+    
     for (int count = 0; count < V - 1; count++)
     {
         int u = min_distance(dist, visited);
-        visited[u] = 1;
+        if (u == -1) break;
+        visited[u] = true; // Use true
         for (int v = 0; v < V; v++)
             if (graph[u][v] && !visited[v] && dist[u] != INT_MAX && dist[u] + graph[u][v] < dist[v])
                 dist[v] = dist[u] + graph[u][v];
